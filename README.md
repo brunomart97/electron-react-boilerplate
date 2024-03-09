@@ -32,7 +32,7 @@ First, run the react build:
 npm run build-react
 ```
 
-Then, run the electron build for the chosen operating system:
+Then, run the electron build for the chosen operational system:
 
 Windows:
 
