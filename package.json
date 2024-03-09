@@ -1,0 +1,49 @@
+{
+  "name": "electron-react-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "scripts": {
+    "react": "react-scripts start",
+    "electron": "electron .",
+    "build-react": "react-scripts build",
+    "build-electron-win": "npm run build && electron-builder -w -c.extraMetadata.main=build/electron.js",
+    "build-electron-mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/electron.js",
+    "build-electron-linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/electron.js"
+  },
+  "build": {
+    "appId": "com.exemple.electron",
+    "productName": "App Exemple",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "public"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "electron-is-dev": "^3.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "electron": "^29.1.1",
+    "electron-builder": "^24.13.3"
+  }
+}
