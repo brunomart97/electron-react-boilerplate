@@ -1,7 +1,10 @@
+import { useHelloWorldContext } from './hooks/useHelloWorldContext'
 import logo from './logo.svg'
 import './App.css'
 
 function App() {
+  const { helloWorld } = useHelloWorldContext()
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,6 +12,9 @@ function App() {
         <p>
           <code>Electron-React Boilerplate</code>
         </p>
+        <span>
+          <code>Electron context: {helloWorld}</code>
+        </span>
       </header>
     </div>
   )

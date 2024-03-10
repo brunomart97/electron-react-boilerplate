@@ -10,16 +10,18 @@ const createWindow = () => {
     resizable: false,
     maximizable: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload.js')
     },
-    autoHideMenuBar: true,
+    autoHideMenuBar: true
   })
 
   const startUrl = isDev ? 'http://localhost:3000' : url.format({
     pathname: path.join(__dirname, '/../build/index.html'),
     protocol: 'file:',
     slashes: true
-  });
+  })
 
   window.loadURL(startUrl)
 }
